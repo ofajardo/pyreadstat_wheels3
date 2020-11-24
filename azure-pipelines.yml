@@ -2,7 +2,7 @@ trigger:
 - main
 
 variables:
-  BUILD_COMMIT: "master"
+  BUILD_COMMIT: 876a17a55d859485dbeb505ddc4ad4f0369e47ff
 
 jobs:
   - template: azure/posix.yml

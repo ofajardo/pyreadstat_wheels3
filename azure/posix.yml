@@ -37,10 +37,6 @@ jobs:
 
       - bash: |
           set -e
-
-          if [ "$BUILD_REASON" == "Schedule" ]; then
-            BUILD_COMMIT=$NIGHTLY_BUILD_COMMIT
-          fi
           echo "Building pyreadstat@$BUILD_COMMIT"
           echo "##vso[task.setvariable variable=BUILD_COMMIT]$BUILD_COMMIT"
 
@@ -96,16 +92,11 @@ jobs:
 
       - bash: |
           set -e
-          if [ $ANACONDA_ORG == "scipy-wheels-nightly" ]; then
-            source extra_functions.sh
-            for f in wheelhouse/*.whl; do rename_wheel $f; done
-          fi
-
           echo uploading wheelhouse/*.whl
           anaconda -t $MAPPED_ANACONDA_TOKEN upload --force -u $ANACONDA_ORG wheelhouse/*.whl
           echo "PyPI-style index: https://pypi.anaconda.org/$ANACONDA_ORG/simple"
         displayName: Upload to anaconda.org (only if secret token is retrieved)
         env:
-          # secrets must be mapped explicitly
+          # secrets must be mapped explicitly 
           MAPPED_ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         condition: ne(variables['ANACONDA_TOKEN'], '')
