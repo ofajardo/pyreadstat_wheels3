@@ -4,8 +4,8 @@
 function pre_build {
     # Any stuff that you need to do before you start building the wheels
     # Runs in the root directory of this repository.
-    $PYTHON_EXE -mpip install urllib3
     build_zlib
+
 }
 
 function run_tests {

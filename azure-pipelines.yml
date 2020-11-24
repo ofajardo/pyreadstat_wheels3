@@ -7,6 +7,20 @@ variables:
 jobs:
   - template: azure/posix.yml
     parameters:
+      name: macOS
+      vmImage: macOS-10.14
+      matrix:
+        py_3.6_64:
+          MB_PYTHON_VERSION: "3.6"
+        py_3.7_64:
+          MB_PYTHON_VERSION: "3.7"
+        py_3.8_64:
+          MB_PYTHON_VERSION: "3.8"
+        py_3.9_64:
+          MB_PYTHON_VERSION: "3.9"
+
+  - template: azure/posix.yml
+    parameters:
       name: linux
       vmImage: ubuntu-18.04
       matrix:
@@ -43,16 +57,3 @@ jobs:
           MB_PYTHON_VERSION: "3.9"
           MB_ML_VER: "1"
 
-  - template: azure/posix.yml
-    parameters:
-      name: macOS
-      vmImage: macOS-10.14
-      matrix:
-        py_3.6_64:
-          MB_PYTHON_VERSION: "3.6"
-        py_3.7_64:
-          MB_PYTHON_VERSION: "3.7"
-        py_3.8_64:
-          MB_PYTHON_VERSION: "3.8"
-        py_3.9_64:
-          MB_PYTHON_VERSION: "3.9"
