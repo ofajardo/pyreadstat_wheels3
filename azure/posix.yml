@@ -72,7 +72,7 @@ jobs:
           before_install
 
           clean_code $REPO_DIR $BUILD_COMMIT
-	  #./patch_code.sh $REPO_DIR
+          #./patch_code.sh $REPO_DIR
           build_wheel $REPO_DIR $PLAT
         displayName: Build wheel
 
