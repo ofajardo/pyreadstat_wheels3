@@ -107,6 +107,4 @@ jobs:
         displayName: Upload to anaconda.org (only if secret token is retrieved)
         condition: ne(variables['ANACONDA_TOKEN'], '')
         env:
-  				# Secret variables need to mapped to env variables explicitly:
   				ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-
