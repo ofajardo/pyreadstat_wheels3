@@ -4,7 +4,8 @@ Wheels for pyreadstat
 This is a repo building wheels for pyreadstat using the multibuild package. 
 It is a modification from the older repo https://github.com/ofajardo/pyreadstat_wheels2.
 The main modification respect to the old one is that here we use azure to build linux and
-mac instead of Travis. 
+mac instead of Travis. Numpy wheels was taking as model for building the azure-pipelines.yml
+and azure templates, see [here](https://github.com/MacPython/numpy-wheels)
 
 Wheels are uploaded to Anaconda Cloud. In order to do that a anaconda cloud account had 
 to be set and the token retrived via WEB UI 
