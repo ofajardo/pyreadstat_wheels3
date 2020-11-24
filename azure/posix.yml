@@ -99,4 +99,4 @@ jobs:
         env:
           # secrets must be mapped explicitly 
           MAPPED_ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        condition: ne(variables['ANACONDA_TOKEN'], '')
+        condition: and(succeeded(), ne(variables['ANACONDA_TOKEN'], ''))
