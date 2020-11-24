@@ -37,8 +37,6 @@ jobs:
         py_3.8_64manylinux1:
           MB_PYTHON_VERSION: "3.8"
           MB_ML_VER: "1"
-          MB_PYTHON_VERSION: "3.7"
-          MB_ML_VER: "1"
 
   - template: azure/posix.yml
     parameters:
