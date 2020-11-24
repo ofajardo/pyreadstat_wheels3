@@ -39,7 +39,7 @@ jobs:
           PLAT: "i686"
           MB_ML_VER: "1"
           DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
-        py_3.8_64manylinux1:
+        py_3.9_64manylinux1:
           MB_PYTHON_VERSION: "3.9"
           MB_ML_VER: "1"
 
