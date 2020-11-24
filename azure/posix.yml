@@ -96,17 +96,6 @@ jobs:
 
       - bash: |
           set -e
-          TOKEN="$ANACONDA_TOKEN"
-          echo "##vso[task.setvariable variable=TOKEN]$TOKEN"
-          echo "##vso[task.setvariable variable=ANACONDA_ORG]$ANACONDA_ORG"
-        displayName: Retrieve secret upload token
-        env:
-          # Secret variables need to mapped to env variables explicitly:
-          MAPPED_NUMPY_NIGHTLY_UPLOAD_TOKEN: $(NUMPY_NIGHTLY_UPLOAD_TOKEN)
-          MAPPED_NUMPY_STAGING_UPLOAD_TOKEN: $(NUMPY_STAGING_UPLOAD_TOKEN)
-
-      - bash: |
-          set -e
           if [ $ANACONDA_ORG == "scipy-wheels-nightly" ]; then
             source extra_functions.sh
             for f in wheelhouse/*.whl; do rename_wheel $f; done
