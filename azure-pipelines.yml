@@ -10,8 +10,6 @@ jobs:
       name: macOS
       vmImage: macOS-10.14
       matrix:
-        py_2.7_64:
-          MB_PYTHON_VERSION: "2.7"
         py_3.6_64:
           MB_PYTHON_VERSION: "3.6"
         py_3.7_64:
@@ -29,41 +27,41 @@ jobs:
         py_2.7_32manylinux1:
           MB_PYTHON_VERSION: "2.7"
           PLAT: "i686"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
           DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
         py_2.7_64manylinux1:
           MB_PYTHON_VERSION: "2.7"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
         py_3.6_32manylinux1:
           MB_PYTHON_VERSION: "3.6"
           PLAT: "i686"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
           DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
         py_3.6_64manylinux1:
           MB_PYTHON_VERSION: "3.6"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
         py_3.7_32manylinux1:
           MB_PYTHON_VERSION: "3.7"
           PLAT: "i686"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
           DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
         py_3.7_64manylinux1:
           MB_PYTHON_VERSION: "3.7"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
         py_3.8_32manylinux1:
           MB_PYTHON_VERSION: "3.8"
           PLAT: "i686"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
           DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
         py_3.8_64manylinux1:
           MB_PYTHON_VERSION: "3.8"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
         py_3.9_32manylinux1:
           MB_PYTHON_VERSION: "3.9"
           PLAT: "i686"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
           DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
         py_3.9_64manylinux1:
           MB_PYTHON_VERSION: "3.9"
-          MB_ML_VER: "2010"
+          MB_ML_VER: "2014"
 
