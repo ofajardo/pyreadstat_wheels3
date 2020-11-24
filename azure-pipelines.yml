@@ -10,7 +10,7 @@ jobs:
       name: linux
       vmImage: ubuntu-18.04
       matrix:
-         py_3.6_32manylinux1:
+        py_3.6_32manylinux1:
           MB_PYTHON_VERSION: "3.6"
           PLAT: "i686"
           MB_ML_VER: "1"
@@ -19,7 +19,7 @@ jobs:
         py_3.6_64manylinux1:
           MB_PYTHON_VERSION: "3.6"
           MB_ML_VER: "1"
-         py_3.7_32manylinux1:
+        py_3.7_32manylinux1:
           MB_PYTHON_VERSION: "3.7"
           PLAT: "i686"
           MB_ML_VER: "1"

@@ -2,15 +2,15 @@
 Wheels for pyreadstat
 
 This is a repo building wheels for pyreadstat using the multibuild package. 
-It is a modification from the older repo .com/MacPython/pyreadstat-wheels.
-The main modification respect to the old one is that files are uploaded to Anaconda Cloud 
-instead of Rackspace (as the former was going to dissapear).
+It is a modification from the older repo https://github.com/ofajardo/pyreadstat_wheels2.
+The main modification respect to the old one is that here we use azure to build linux and
+mac instead of Travis. 
 
-In order to do that a anaconda cloud account had to be set and the token retrived via WEB UI 
-(also possible with CLI), set the Token in Travis and APPVEYOR as secret environment variable
-for the project, and then just upload the wheels using the Anaconda-client in .travis.yml and
-appveyor.yml. Interestingly in travis as we are using plain python and not anaconda, I had to 
-install Anaconda-cli from github as the pypi version was too old and was causing errors. 
+Wheels are uploaded to Anaconda Cloud. In order to do that a anaconda cloud account had 
+to be set and the token retrived via WEB UI 
+(also possible with CLI), set the Token in Azure and APPVEYOR as secret environment variable
+for the project, and then just upload the wheels using the Anaconda-client in azure-pipelines.yml and
+appveyor.yml. 
 
 The wheels are then visible in https://anaconda.org/ofajardo/pyreadstat/files
 
@@ -23,16 +23,8 @@ Building and uploading pyreadstat wheels
 ########################################
 
 We automate wheel building using this custom github repository that builds on
-the travis-ci OSX machines, travis-ci Linux machines, and the Appveyor VMs.
+the azure-pipelines OSX machines, azure-pipelines Linux machines, and the Appveyor VMs.
 
-The travis-ci interface for the builds is
-https://travis-ci.org/MacPython/pyreadstat-wheels
-
-Appveyor interface at
-https://ci.appveyor.com/project/matthew-brett/pyreadstat-wheels
-
-The driving github repository is
-https://github.com/MacPython/pyreadstat-wheels
 
 How it works
 ============
@@ -52,26 +44,18 @@ The resulting wheels are therefore self-contained and do not need any external
 dynamic libraries apart from those provided as standard by OSX / Linux as
 defined by the manylinux1 standard.
 
-The ``.travis.yml`` file in this repository has a line containing the API key
-for the Rackspace container encrypted with an RSA key that is unique to the
-repository - see https://docs.travis-ci.com/user/encryption-keys.  This
-encrypted key gives the travis build permission to upload to the Rackspace
-containers we use to house the uploads.
 
 Triggering a build
 ==================
 
-You will likely want to edit the ``.travis.yml`` and ``appveyor.yml`` files to
+You will likely want to edit the ``azure-pipelines.yml`` and ``appveyor.yml`` files to
 specify the ``BUILD_COMMIT`` before triggering a build - see below.
-
-You will need write permission to the github repository to trigger new builds
-on the travis-ci interface.  Contact us on the mailing list if you need this.
 
 You can trigger a build by:
 
 * making a commit to the `pyreadstat-wheels` repository (e.g. with `git
   commit --allow-empty`); or
-* clicking on the circular arrow icon towards the top right of the travis-ci
+* clicking on the circular arrow icon towards the top right of the azure-pipelines
   page, to rerun the previous build.
 
 In general, it is better to trigger a build with a commit, because this makes
@@ -83,7 +67,7 @@ Which pyreadstat commit does the repository build?
 ==================================================
 
 The ``pyreadstat-wheels`` repository will build the commit specified in the
-``BUILD_COMMIT`` at the top of the ``.travis.yml`` and ``appveyor.yml`` files.
+``BUILD_COMMIT`` at the top of the ``azure-pipelines.yml`` and ``appveyor.yml`` files.
 This can be any naming of a commit, including branch name, tag name or commit
 hash.
 
@@ -95,9 +79,6 @@ of an unexpected build/test issue.
 
 Uploading the built wheels to pypi
 ==================================
-
-* release container visible at
-  https://3f23b170c54c2533c070-1c8a9b3114517dc5fe17b7c3f8c63a43.ssl.cf2.rackcdn.com
 
 Be careful, these links point to containers on a distributed content delivery
 network.  It can take up to 15 minutes for the new wheel file to get updated
