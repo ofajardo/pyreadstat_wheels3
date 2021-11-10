@@ -1,3 +1,5 @@
+image:
+  - Visual Studio 2019
 environment:
 
   global:
@@ -32,7 +34,7 @@ install:
   # activate conda base environment
   #- if "%PLATFORM%" == "x64" set CONDAPATH=%CONDAPATH%-x64
   # use conda37 for everything and later create a conda env with version
-  - set CONDAPATH=C:\Miniconda37
+  - set CONDAPATH=C:\Miniconda38
   - if "%PLATFORM%" == "x64" set CONDAPATH=%CONDAPATH%-x64
   - call %CONDAPATH%\Scripts\activate
   # prepare environment with conda
