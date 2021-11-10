@@ -9,15 +9,14 @@ environment:
       # ANCONDA_TOKEN must be set in appveyor project settings
 
   matrix:
+    - PYTHON_VERSION: "3.6"
+    #CONDAPATH: 'C:\Miniconda36'
+    - PYTHON_VERSION: "3.7"
+    #CONDAPATH: 'C:\Miniconda37'
+    - PYTHON_VERSION: "3.8"
+    #CONDAPATH: 'C:\Miniconda38'
+    - PYTHON_VERSION: "3.9"
     - PYTHON_VERSION: "3.10"
-    #- PYTHON_VERSION: "3.6"
-      #CONDAPATH: 'C:\Miniconda36'
-      #- PYTHON_VERSION: "3.7"
-      #CONDAPATH: 'C:\Miniconda37'
-      #- PYTHON_VERSION: "3.8"
-      #CONDAPATH: 'C:\Miniconda38'
-      #- PYTHON_VERSION: "3.9"
-      #- PYTHON_VERSION: "3.10"
  
 platform:
   - x64
