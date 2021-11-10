@@ -19,6 +19,8 @@ jobs:
           MB_PYTHON_VERSION: "3.8"
         py_3.9_64:
           MB_PYTHON_VERSION: "3.9"
+        py_3.10_64:
+          MB_PYTHON_VERSION: "3.10"
 
   - template: azure/posix.yml
     parameters:
@@ -57,6 +59,14 @@ jobs:
         py_3.9_64manylinux1:
           MB_PYTHON_VERSION: "3.9"
           MB_ML_VER: "2014"
+        py_3.10_32manylinux1:
+          MB_PYTHON_VERSION: "3.10"
+          PLAT: "i686"
+          MB_ML_VER: "2010"
+          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+        py_3.10_64manylinux1:
+          MB_PYTHON_VERSION: "3.10"
+          MB_ML_VER: "2014"
 
   - template: azure/posix.yml
     parameters:
@@ -80,6 +90,11 @@ jobs:
           DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
         py_3.9_aarch64manylinux2014:
           MB_PYTHON_VERSION: "3.9"
+          MB_ML_VER: "2014"
+          PLAT: "aarch64"
+          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+        py_3.10_aarch64manylinux2014:
+          MB_PYTHON_VERSION: "3.10"
           MB_ML_VER: "2014"
           PLAT: "aarch64"
           DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
