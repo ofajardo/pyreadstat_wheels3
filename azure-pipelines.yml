@@ -9,7 +9,7 @@ jobs:
   - template: azure/posix.yml
     parameters:
       name: macOS
-      vmImage: macOS-10.14
+      vmImage: macOS-1015
       matrix:
         py_3.6_64:
           MB_PYTHON_VERSION: "3.6"
@@ -25,13 +25,13 @@ jobs:
   - template: azure/posix.yml
     parameters:
       name: linux
-      vmImage: ubuntu-18.04
+      vmImage: ubuntu-20.04
       matrix:
         py_3.6_32manylinux1:
           MB_PYTHON_VERSION: "3.6"
           PLAT: "i686"
           MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.6_64manylinux1:
           MB_PYTHON_VERSION: "3.6"
           MB_ML_VER: "2014"
@@ -39,7 +39,7 @@ jobs:
           MB_PYTHON_VERSION: "3.7"
           PLAT: "i686"
           MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.7_64manylinux1:
           MB_PYTHON_VERSION: "3.7"
           MB_ML_VER: "2014"
@@ -47,7 +47,7 @@ jobs:
           MB_PYTHON_VERSION: "3.8"
           PLAT: "i686"
           MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.8_64manylinux1:
           MB_PYTHON_VERSION: "3.8"
           MB_ML_VER: "2014"
@@ -55,7 +55,7 @@ jobs:
           MB_PYTHON_VERSION: "3.9"
           PLAT: "i686"
           MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.9_64manylinux1:
           MB_PYTHON_VERSION: "3.9"
           MB_ML_VER: "2014"
@@ -63,7 +63,7 @@ jobs:
           MB_PYTHON_VERSION: "3.10"
           PLAT: "i686"
           MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.10_64manylinux1:
           MB_PYTHON_VERSION: "3.10"
           MB_ML_VER: "2014"
@@ -77,24 +77,24 @@ jobs:
           MB_PYTHON_VERSION: "3.6"
           MB_ML_VER: "2014"
           PLAT: "aarch64"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.7_aarch64manylinux2014:
           MB_PYTHON_VERSION: "3.7"
           MB_ML_VER: "2014"
           PLAT: "aarch64"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.8_aarch64manylinux2014:
           MB_PYTHON_VERSION: "3.8"
           MB_ML_VER: "2014"
           PLAT: "aarch64"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.9_aarch64manylinux2014:
           MB_PYTHON_VERSION: "3.9"
           MB_ML_VER: "2014"
           PLAT: "aarch64"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.10_aarch64manylinux2014:
           MB_PYTHON_VERSION: "3.10"
           MB_ML_VER: "2014"
           PLAT: "aarch64"
-          DOCKER_TEST_IMAGE: "multibuild/xenial_{PLAT}"
+          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
