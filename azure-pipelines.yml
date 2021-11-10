@@ -27,43 +27,18 @@ jobs:
       name: linux
       vmImage: ubuntu-20.04
       matrix:
-        py_3.6_32manylinux1:
-          MB_PYTHON_VERSION: "3.6"
-          PLAT: "i686"
-          MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.6_64manylinux1:
           MB_PYTHON_VERSION: "3.6"
           MB_ML_VER: "2014"
-        py_3.7_32manylinux1:
-          MB_PYTHON_VERSION: "3.7"
-          PLAT: "i686"
-          MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.7_64manylinux1:
           MB_PYTHON_VERSION: "3.7"
           MB_ML_VER: "2014"
-        py_3.8_32manylinux1:
-          MB_PYTHON_VERSION: "3.8"
-          PLAT: "i686"
-          MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.8_64manylinux1:
           MB_PYTHON_VERSION: "3.8"
           MB_ML_VER: "2014"
-        py_3.9_32manylinux1:
-          MB_PYTHON_VERSION: "3.9"
-          PLAT: "i686"
-          MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.9_64manylinux1:
           MB_PYTHON_VERSION: "3.9"
           MB_ML_VER: "2014"
-        py_3.10_32manylinux1:
-          MB_PYTHON_VERSION: "3.10"
-          PLAT: "i686"
-          MB_ML_VER: "2010"
-          DOCKER_TEST_IMAGE: "multibuild/focal_{PLAT}"
         py_3.10_64manylinux1:
           MB_PYTHON_VERSION: "3.10"
           MB_ML_VER: "2014"

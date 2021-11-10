@@ -18,7 +18,7 @@ environment:
  
 platform:
   - x64
-  - x86
+#  - x86
 
 matrix:
   exclude:
@@ -32,7 +32,7 @@ install:
   # activate conda base environment
   #- if "%PLATFORM%" == "x64" set CONDAPATH=%CONDAPATH%-x64
   # use conda37 for everything and later create a conda env with version
-  - set CONDAPATH=C:\Miniconda38
+  - set CONDAPATH=C:\Miniconda37
   - if "%PLATFORM%" == "x64" set CONDAPATH=%CONDAPATH%-x64
   - call %CONDAPATH%\Scripts\activate
   # prepare environment with conda
