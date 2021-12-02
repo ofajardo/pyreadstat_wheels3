@@ -44,7 +44,7 @@ jobs:
   - template: azure/posix.yml
     parameters:
       name: linuxaarch64
-      vmImage: ubuntu-18.04
+      vmImage: ubuntu-20.04
       matrix:
         py_3.6_aarch64manylinux2014:
           MB_PYTHON_VERSION: "3.6"
