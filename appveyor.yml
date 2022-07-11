@@ -44,6 +44,7 @@ install:
   - copy libiconv-win-build\\build-VS2019-MT\\x64\\Release\\libiconv-static.lib  pyreadstat\\win_libs\\64bit
   # libz
   - git clone https://github.com/kiyolee/zlib-win-build.git
+  - cd zlib-win-build
   - git checkout 48e49de94a66b0e3cecee38530993bd0c1de5bfa
   - cd ..
   - msbuild.exe zlib-win-build/build-VS2019-MT/zlib.sln /property:Configuration=Release;Platform=X64
