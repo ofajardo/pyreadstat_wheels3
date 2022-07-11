@@ -4,7 +4,7 @@ environment:
 
   global:
       # Remember to edit .travis.yml too
-      BUILD_COMMIT: 8d619983276018eca7a86c5b71c6cfa5879a35b2
+      BUILD_COMMIT: 3fc711b7fd699fa10f04ce018e4dc5f807cf21d0
       ANACONDA_ORG: ofajardo
       # ANCONDA_TOKEN must be set in appveyor project settings
 
@@ -47,9 +47,9 @@ install:
   # install necessary packages
   #- conda install -q setuptools pip cython wheel
   - pip install cython
-  - conda install -c conda-forge libpython
+  #- conda install -c conda-forge libpython
   # mingw64 toolchain to compile python extensions
-  - conda install -q -c msys2 m2w64-toolchain
+  #- conda install -q -c msys2 m2w64-toolchain
   
 build_script:
   # Build and install the wheel
@@ -59,7 +59,7 @@ build_script:
   # clean dist dir just in case there is something in there
   #- del /Q dist\*.*
   # set mingw32 as compiler and produce the wheel
-  - python.exe setup.py config --compiler=mingw32
+  #- python.exe setup.py config --compiler=mingw32
   - python.exe setup.py bdist_wheel 
   - ps: "ls dist"
   - ps: |
