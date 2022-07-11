@@ -34,11 +34,18 @@ install:
   - git checkout %BUILD_COMMIT%
   - cd ..
     # clone and build external libraries
+    # libiconv
   - git clone https://github.com/kiyolee/libiconv-win-build.git
+  - cd libiconv-win-build
+  - git checkout e6a1bcfe6a3a6e75e351e096286d14c14b5ef79b
+  - cd ..
   - msbuild.exe libiconv-win-build/build-VS2019-MT/libiconv.sln /property:Configuration=Release;Platform=X64
   - copy libiconv-win-build\\include\\iconv.h pyreadstat\\win_libs\\64bit                                   
   - copy libiconv-win-build\\build-VS2019-MT\\x64\\Release\\libiconv-static.lib  pyreadstat\\win_libs\\64bit
+  # libz
   - git clone https://github.com/kiyolee/zlib-win-build.git
+  - git checkout 48e49de94a66b0e3cecee38530993bd0c1de5bfa
+  - cd ..
   - msbuild.exe zlib-win-build/build-VS2019-MT/zlib.sln /property:Configuration=Release;Platform=X64
   - copy zlib-win-build\\zlib.h pyreadstat\\win_libs\\64bit                                   
   - copy zlib-win-build\\zconf.h pyreadstat\\win_libs\\64bit                                   
