@@ -29,6 +29,17 @@ matrix:
 
 install:
   - git submodule update --init
+    # clone and build external libraries
+  - git clone https://github.com/kiyolee/libiconv-win-build.git
+  - msbuild.exe libiconv-win-build/build-VS2019-MT/libiconv.sln /property:Configuration=Release;Platform=X64
+  - copy libiconv-win-build\\include\\iconv.h pyreadstat\\win_libs\\64bit                                   
+  - copy libiconv-win-build\\build-VS2019-MT\\x64\\Release\\libiconv-static.lib  pyreadstat\\win_libs\\64bit
+  - git clone https://github.com/kiyolee/zlib-win-build.git
+  - msbuild.exe zlib-win-build/build-VS2019-MT/zlib.sln /property:Configuration=Release;Platform=X64
+  - copy zlib-win-build\\include\\zlib.h pyreadstat\\win_libs\\64bit                                   
+  - copy zlib-win-build\\include\\zconf.h pyreadstat\\win_libs\\64bit                                   
+  - copy zlib-win-build\\build-VS2019-MT\\x64\\Release\\libz-static.lib  pyreadstat\\win_libs\\64bit
+
   # activate conda base environment
   #- if "%PLATFORM%" == "x64" set CONDAPATH=%CONDAPATH%-x64
   # use conda37 for everything and later create a conda env with version
